@@ -1,0 +1,15 @@
+import { createSelector } from '@ngrx/store';
+
+import { moduleFeatureKey } from '.';
+import { featureKey, PaymentState } from './reducer';
+
+export const selectCreditCardState = (state: { [x: string]: { [x: string]: PaymentState; }; }): PaymentState =>
+  state[moduleFeatureKey][featureKey];
+const getPaymentState = createSelector(selectCreditCardState, state => state);
+const getCreditCardState = createSelector(selectCreditCardState, state => state.creditCardData);
+
+export const CreditCardQuery = {
+  selectCreditCardState,
+  getCreditCardState,
+  getPaymentState
+};
