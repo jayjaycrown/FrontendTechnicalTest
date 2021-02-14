@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { select, State, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { CreditCard } from '../models/credit-card.interface';
-import { load, payWithCard, payWithCardSuccess } from './actions';
+import { load, payWithCard, payWithCardSuccess } from './cardActions';
 import { CreditCardQuery } from './selectors';
 
 @Injectable()
-export class CreditCardPaymentFacade {
+export class CreditCardPaymentStatus {
   readonly data$: Observable<CreditCard>;
 
   constructor(private store: Store) {

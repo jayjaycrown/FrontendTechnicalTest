@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'payment',
     component: CardPaymentComponent
-  }
+  },
 ];
 
 @NgModule({

@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+.toast-container {
+    background-color: #0b8411;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+.toast-title {
+    background-color: #08690d;
+    padding: 10px;
+}
+.toast-message{
+  padding: 10px;
+}
+.toast-close-button {
+    padding: 10px;
+    position: relative;
+    top: -80px;
+    right: -273px;
+    height: 41px;
+    background: #0b8411;
+    color: #fff;
+    border: none;
+    width: 50px;
+}

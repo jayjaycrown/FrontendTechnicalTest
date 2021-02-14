@@ -1,18 +1,18 @@
-import * as fromCreditCardPaymentStoreActions from './actions';
-import * as fromCreditCardPaymentStoreEffects from './effects';
-import * as fromCreditCardPaymentStoreSelectors from './selectors';
+import * as fromCreditCardPaymentStoreActions from './cardActions';
+import * as fromCreditCardPaymentStoreEffects from './paymentStoreEffects';
+// import * as fromCreditCardPaymentStoreSelectors from './selectors';
 import * as fromCreditCardPaymentStoreReducer from './reducer';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import { InjectionToken } from '@angular/core';
 import { PaymentState } from './reducer';
 export {
     CreditCardPaymentStoreModule
-} from './credit-card-payment-store.module';
+} from './card-store.module';
 
 export {
     fromCreditCardPaymentStoreActions,
     fromCreditCardPaymentStoreEffects,
-    fromCreditCardPaymentStoreSelectors,
+    // fromCreditCardPaymentStoreSelectors,
     fromCreditCardPaymentStoreReducer
 };
 
@@ -38,3 +38,4 @@ export const moduleReducers = new InjectionToken<ActionReducerMap<paymentModuleS
     [fromCreditCardPaymentStoreReducer.featureKey]: fromCreditCardPaymentStoreReducer.reducer,
   })
 });
+

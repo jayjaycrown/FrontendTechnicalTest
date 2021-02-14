@@ -1,10 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToasterService } from 'angular2-toaster';
 import { Subject } from 'rxjs';
-import { CreditCardPaymentFacade } from '../store/facade';
+import { CreditCardPaymentStatus } from '../store/cardInfo';
 import { currentDate } from '../store/reducer';
-import { PaymentService } from '../services/payment.service';
 
 @Component({
   selector: 'app-card-payment',
@@ -20,7 +18,7 @@ export class CardPaymentComponent implements OnInit, OnDestroy {
   currentMonth = currentDate.getMonth();
   currentYear = currentDate.getFullYear();
 
-  constructor(private formBuilder: FormBuilder, private facade: CreditCardPaymentFacade) { }
+  constructor(private formBuilder: FormBuilder, private paymentStatus: CreditCardPaymentStatus) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -63,7 +61,7 @@ export class CardPaymentComponent implements OnInit, OnDestroy {
       amount: +this.paymentForm.get('amount').value,
     };
 
-    this.facade.makePayment(paymentFormData);
+    this.paymentStatus.makePayment(paymentFormData);
   } else {
     this.errorMessage = 'the Form is Invalid!';
   }

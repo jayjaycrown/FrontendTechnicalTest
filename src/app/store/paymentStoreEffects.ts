@@ -14,7 +14,7 @@ import {
   payWithCard,
   payWithCardError,
   payWithCardSuccess,
-} from './actions';
+} from './cardActions';
 import { ToasterService } from 'angular2-toaster';
 import { Router } from '@angular/router';
 
@@ -42,7 +42,7 @@ export class CreditCardPaymentStoreEffects {
               this.toasterService.pop(
                 'success',
                 'SUCCESSFUL',
-                'Your payment was successful'
+                'Payment Successfull'
               );
               this.router.navigate(['']);
               returnedAction = payWithCardSuccess({creditCardData: paymentData});
@@ -50,7 +50,7 @@ export class CreditCardPaymentStoreEffects {
               this.toasterService.pop(
                 'error',
                 'FAILURE',
-                'Your payment Failed please try again later'
+                'Payment Failed please try again later'
               );
               returnedAction = payWithCardError({
                 error: 'Something went wrong please try again',

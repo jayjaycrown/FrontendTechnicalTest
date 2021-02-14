@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { CreditCard } from '../models/credit-card.interface';
-import * as creditCardPaymentActions from './actions';
+import * as creditCardPaymentActions from './cardActions';
 
 export const featureKey = 'creditCard';
 export const currentDate = new Date();
